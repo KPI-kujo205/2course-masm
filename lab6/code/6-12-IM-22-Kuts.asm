@@ -12,7 +12,7 @@ include \masm32\include\masm32rt.inc
     DArray dq 0.5, 100.2, 19.2, 1.4, 7.45, 7.45
 
     ; window caption
-    SutulovWindowCaption db "System programming, laboratory 6, Ivan Kuts, variant 12", 0
+    windowCaption db "System programming, laboratory 6, Ivan Kuts, variant 12", 0
 
     ; window text template
     testTemplate db "This is the test #%d", 0
@@ -152,7 +152,7 @@ lab6:
             offset currentValuesBuffer, offset expressionBuffer,
 			offset finalResultBuffer 
 
-        invoke MessageBox, 0, offset finalBuffer, offset SutulovWindowCaption, 0
+        invoke MessageBox, 0, offset finalBuffer, offset windowCaption, 0
 
         inc edi
         inc esi
@@ -187,7 +187,7 @@ lab6:
             offset expressionBuffer,
             offset finalResultBuffer
 
-        invoke MessageBox, 0, offset finalBuffer, offset SutulovWindowCaption, 0
+        invoke MessageBox, 0, offset finalBuffer, offset windowCaption, 0
 		
         inc edi
         inc esi
@@ -220,7 +220,7 @@ lab6:
             offset expressionBuffer,
             offset finalResultBuffer
 
-        invoke MessageBox, 0, offset finalBuffer, offset SutulovWindowCaption, 0
+        invoke MessageBox, 0, offset finalBuffer, offset windowCaption, 0
         inc edi
         inc esi
         jmp iterateThroughArrays
